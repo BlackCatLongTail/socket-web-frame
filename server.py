@@ -7,7 +7,6 @@ from utils import log
 from routes import error
 
 from routes.routes_todo import route_dict as todo_routes
-from routes.api_todo import route_dict as todo_api
 from routes.routes_weibo import route_dict as weibo_routes
 from routes.routes_user import route_dict as user_routes
 from routes.routes_public import route_dict as public_routes
@@ -21,7 +20,6 @@ def response_for_path(request):
     """
     r = {}
     # 注册外部的路由
-    r.update(todo_api())
     r.update(todo_routes())
     r.update(weibo_routes())
     r.update(user_routes())
